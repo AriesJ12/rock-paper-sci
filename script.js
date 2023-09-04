@@ -84,4 +84,39 @@ function caseInsensitiveCompare(a, b) {
         ? a.localeCompare(b, undefined, { sensitivity: 'accent' }) === 0
         : a === b;
 }
+//declare max rounds
+const MAX_ROUND = 5;
+let playerScore = 0, computerScore = 0;
 
+//create loop
+for(let i = 0; i < MAX_ROUND; i++)
+{
+    //get result -- aka play the round
+    let result = playRound();
+
+    //get winner then add score
+    //and display score
+    if (result === "computer")
+    {
+        computerScore++;
+    }
+    else if (result === "player")
+    {
+        playerScore++;
+    }
+}
+//display winner
+if (playerScore > computerScore)
+{
+    console.log("player wins");
+}
+else if (playerScore < computerScore)
+{
+    console.log("computer wins");
+}
+else
+{
+    console.log("tie");
+}
+
+playerScore = 0, computerScore = 0;
