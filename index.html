@@ -13,19 +13,29 @@
 
     <div class="section">
       <div class="container">
-        <div class="score" id="playerScore">0</div>
-        <button data-answer="rock" type="button" class="choice">Rock</button>
-        <button data-answer="scissor" type="button" class="choice">
-          Scissors
-        </button>
-        <button data-answer="paper" type="button" class="choice">Paper</button>
+        <div class="choice-container">
+          <button data-answer="rock" type="button" class="choice">Rock</button>
+          <button data-answer="scissor" type="button" class="choice">
+            Scissors
+          </button>
+          <button data-answer="paper" type="button" class="choice">
+            Paper
+          </button>
+        </div>
+        <div class="score-container">
+          <div class="score" id="playerScore">0</div>
+        </div>
       </div>
 
       <div class="container">
-        <div class="score" id="computerScore">0</div>
-        <div class="choice">Rock</div>
-        <div class="choice">Scissors</div>
-        <div class="choice">Paper</div>
+        <div class="score-container">
+          <div class="score" id="computerScore">0</div>
+        </div>
+        <div class="choice-container">
+          <div class="choice">Rock</div>
+          <div class="choice">Scissors</div>
+          <div class="choice">Paper</div>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
