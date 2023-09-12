@@ -1,3 +1,19 @@
+"use strict";
+
+//declare max Score
+const MAX_SCORE = 5;
+
+const buttonsAnswer = document.querySelectorAll(".choice");
+
+
+//add event listener -> click -> play round
+
+buttonsAnswer.forEach(function(answer) {
+  answer.addEventListener("click", function(event) {
+    displayWinner(playRound(event.target.getAttribute("data-answer")));
+  });
+})
+//generate computer answer
 function getComputerChoice()
 {
     //set min and maximum(max refers to the number of possible values -- 0 , 1 , 2 ->3 possible)
@@ -22,8 +38,8 @@ function getComputerChoice()
     }
     return choice;
 }
-
-function playRound(playerSelection = prompt("Make your choice"), computerSelection = getComputerChoice())
+//play a single round of rock paper sci
+function playRound(playerSelection, computerSelection = getComputerChoice())
 {
     const ROCK = "rock";
     const PAPER = "paper";
@@ -84,39 +100,30 @@ function caseInsensitiveCompare(a, b) {
         ? a.localeCompare(b, undefined, { sensitivity: 'accent' }) === 0
         : a === b;
 }
-//declare max rounds
-const MAX_ROUND = 5;
-let playerScore = 0, computerScore = 0;
 
-//create loop
-for(let i = 0; i < MAX_ROUND; i++)
+function displayWinner(result)
 {
-    //get result -- aka play the round
-    let result = playRound();
+  const playerScore = document.querySelector("#playerScore");
+  const computerScore = document.querySelector("#computerScore");
 
-    //get winner then add score
-    //and display score
-    if (result === "computer")
-    {
-        computerScore++;
-    }
-    else if (result === "player")
-    {
-        playerScore++;
-    }
-}
-//display winner
-if (playerScore > computerScore)
-{
-    console.log("player wins");
-}
-else if (playerScore < computerScore)
-{
-    console.log("computer wins");
-}
-else
-{
-    console.log("tie");
+  //just to store possible result
+  const PLAYER = "player";
+  const COMPUTER = "computer";
+
+  if (caseInsensitiveCompare(result, PLAYER))
+  {
+    playerScore.textContent = +playerScore.textContent + 1; 
+  }
+  else if (caseInsensitiveCompare(result, COMPUTER))
+  {
+    computerScore.textContent = +computerScore.textContent + 1; 
+  }
+
+  if(+playerScore.textContent === MAX_SCORE || +computerScore.textContent === MAX_SCORE)
+  {
+    console.log("celebrate winner");
+    playerScore.textContent = 0;
+    computerScore.textContent = 0;
+  }
 }
 
-playerScore = 0, computerScore = 0;
