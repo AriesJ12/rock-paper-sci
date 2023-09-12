@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <h1 style="text-align: center;">Rock paper Scissor</h1>
-    
-    <p class="score" id="playerScore">0</p>
-    <p class="score" id="computerScore">0</p>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="head">Rock paper Scissor</h1>
+    </div>
 
-    <button data-answer = "rock" type="button" class = "choice">Rock</button>
-    <button data-answer = "scissor" type="button" class = "choice">Scissors</button>
-    <button data-answer = "paper" type="button" class = "choice">Paper</button>
+    <div class="section">
+      <div class="container">
+        <div class="score" id="playerScore">0</div>
+        <button data-answer="rock" type="button" class="choice">Rock</button>
+        <button data-answer="scissor" type="button" class="choice">
+          Scissors
+        </button>
+        <button data-answer="paper" type="button" class="choice">Paper</button>
+      </div>
+
+      <div class="container">
+        <div class="score" id="computerScore">0</div>
+        <div class="choice">Rock</div>
+        <div class="choice">Scissors</div>
+        <div class="choice">Paper</div>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

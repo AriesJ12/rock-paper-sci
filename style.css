@@ -1,0 +1,16 @@
+button
+{
+    all:unset;
+}
+
+div
+{
+    border: thin black solid;
+}
+
+.header
+{
+    display: flex;
+    justify-content: center;
+}
+
