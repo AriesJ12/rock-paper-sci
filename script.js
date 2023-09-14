@@ -33,8 +33,15 @@ function getComputerChoice()
       choice = "paper";
       break;
     case 2:
-      choice = "scissors";
+      choice = "scissor";
   }
+
+  //highlight computer choice
+  const buttonsComputer = document.querySelectorAll("#computer button.choice");
+  const selected = document.querySelector(`#computer button.choice[data-answer = "${choice}"]`);
+  
+  addClassSelect(buttonsComputer, selected);
+
   return choice;
 }
 //play a single round of rock paper sci
@@ -53,7 +60,7 @@ function playRound(playerSelection, computerSelection = getComputerChoice())
       case "paper":
         result = "computer";
         break;
-      case "scissors":
+      case "scissor":
         result = "player";
         break;
     }
@@ -65,7 +72,7 @@ function playRound(playerSelection, computerSelection = getComputerChoice())
       case "paper":
         result = "draw";
         break;
-      case "scissors":
+      case "scissor":
         result = "computer";
         break;
     }
@@ -77,7 +84,7 @@ function playRound(playerSelection, computerSelection = getComputerChoice())
       case "paper":
         result = "player";
         break;
-      case "scissors":
+      case "scissor":
         result = "draw";
         break;
     }
@@ -135,5 +142,12 @@ function addClassSelect(nodeList, selected)
   const CLASS_TO_TOGGLE = "selected";
 
   nodeList.forEach((node) => {node.classList.remove(CLASS_TO_TOGGLE)});
-  selected.target.classList.add(CLASS_TO_TOGGLE);
+  if(selected instanceof Event)
+  {
+    selected.target.classList.add(CLASS_TO_TOGGLE);
+  }
+  else
+  {
+    selected.classList.add(CLASS_TO_TOGGLE)
+  }
 }
