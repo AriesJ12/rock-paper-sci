@@ -1,79 +1,67 @@
-*
-{
-    box-sizing: border-box;
-    color: white;
+* {
+  box-sizing: border-box;
+  color: white;
 }
 
-body
-{
-    background-color: #222831;
+body {
+  background-color: #222831;
 }
 
-button
-{
-    all:unset;
+button {
+  all: unset;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.choice-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.score-container,
+.versus-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.versus-container {
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 8rem;
+}
+
+.choice {
+  background-color: #393e46;
+  height: 7rem;
+  width: 8rem;
+  padding: 2rem;
+  font-size: 5rem;
+}
+
+.choice:hover {
+  background-color: #545c68;
+}
+
+.selected {
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+#display-winner::first-letter {
+  text-transform: capitalize;
 }
 
 
-.header
-{
-    display: flex;
-    justify-content: center;
-}
-
-.section
-{
-    display: flex;
-    font-size: 2rem;
-    justify-content: space-evenly;
-    text-align: center;
-}
-
-
-
-.choice-container
-{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.score-container, .versus-container
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-}
-
-.versus-container
-{
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.choice
-{
-    background-color: #393e46;
-    height: 7rem;
-    width: 8rem;
-    padding: 2rem;
-    font-size: 5rem;
-    
-}
-
-.choice:hover
-{
-    background-color: #545c68;
-}
-
-.selected
-{
-    border-color: #ffc600;
-    box-shadow: 0 0 1rem #ffc600;
-}
-
-#display-winner::first-letter
-{
-    text-transform: capitalize;
-}

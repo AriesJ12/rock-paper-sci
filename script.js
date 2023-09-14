@@ -9,11 +9,13 @@ const buttonsAnswer = document.querySelectorAll("#player button.choice");
 
 buttonsAnswer.forEach(function (answer) {
   answer.addEventListener("click", function (event) {
+    addClassSelect(buttonsAnswer, event);
     displayWinner(playRound(event.target.getAttribute("data-answer")));
   });
 });
 //generate computer answer
-function getComputerChoice() {
+function getComputerChoice() 
+{
   //set min and maximum(max refers to the number of possible values -- 0 , 1 , 2 ->3 possible)
   const MIN = 0;
   const MAX = 3;
@@ -36,7 +38,8 @@ function getComputerChoice() {
   return choice;
 }
 //play a single round of rock paper sci
-function playRound(playerSelection, computerSelection = getComputerChoice()) {
+function playRound(playerSelection, computerSelection = getComputerChoice()) 
+{
   const ROCK = "rock";
   const PAPER = "paper";
   const SCISSORS = "scissor";
@@ -83,14 +86,16 @@ function playRound(playerSelection, computerSelection = getComputerChoice()) {
 }
 
 // copy paste from net(uses localCompare accent)
-function caseInsensitiveCompare(a, b) {
+function caseInsensitiveCompare(a, b) 
+{
   return typeof a === "string" && typeof b === "string"
     ? a.localeCompare(b, undefined, { sensitivity: "accent" }) === 0
     : a === b;
 }
 
 //display winner
-function displayWinner(result) {
+function displayWinner(result) 
+{
   const playerScore = document.querySelector("#playerScore");
   const computerScore = document.querySelector("#computerScore");
   const displayWinner = document.querySelector("#display-winner");
@@ -121,4 +126,14 @@ function displayWinner(result) {
     playerScore.textContent = 0;
     computerScore.textContent = 0;
   }
+}
+
+
+//add class for selected choice
+function addClassSelect(nodeList, selected)
+{
+  const CLASS_TO_TOGGLE = "selected";
+
+  nodeList.forEach((node) => {node.classList.remove(CLASS_TO_TOGGLE)});
+  selected.target.classList.add(CLASS_TO_TOGGLE);
 }
