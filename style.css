@@ -49,6 +49,7 @@ button
 .versus-container
 {
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .choice
