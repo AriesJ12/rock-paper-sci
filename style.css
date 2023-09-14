@@ -24,8 +24,9 @@ button
 .section
 {
     display: flex;
-    font-size: 1.5rem;
+    font-size: 2rem;
     justify-content: space-evenly;
+    text-align: center;
 }
 
 
@@ -34,7 +35,7 @@ button
 {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .score-container, .versus-container
@@ -45,14 +46,19 @@ button
     font-size: 3rem;
 }
 
+.versus-container
+{
+    flex-direction: column;
+}
+
 .choice
 {
     background-color: #393e46;
-    height: 200px;
-    width: 200px;
+    height: 7rem;
+    width: 8rem;
     padding: 2rem;
     font-size: 5rem;
-    text-align: center;
+    
 }
 
 .choice:hover
