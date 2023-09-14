@@ -1,3 +1,14 @@
+*
+{
+    box-sizing: border-box;
+    color: white;
+}
+
+body
+{
+    background-color: #222831;
+}
+
 button
 {
     all:unset;
@@ -6,6 +17,7 @@ button
 div
 {
     border: thin black solid;
+    
 }
 
 .header
@@ -17,7 +29,7 @@ div
 .section
 {
     display: flex;
-    justify-content: space-evenly;
+    font-size: 1.5rem;
 }
 
 .container
@@ -25,13 +37,15 @@ div
     display: flex;
     gap: 30px;
     text-align: center;
+    flex-grow:1;
+    justify-content: center;
 }
 
 .choice-container
 {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 3rem;
 }
 
 .score-container
@@ -39,9 +53,22 @@ div
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 3rem;
 }
 
 .choice
 {
-    background-color: #a881af;
+    background-color: #393e46;
+    padding: 5rem;
+}
+
+.choice:hover
+{
+    background-color: #545c68;
+}
+
+.selected
+{
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
 }
