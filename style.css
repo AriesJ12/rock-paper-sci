@@ -14,11 +14,6 @@ button
     all:unset;
 }
 
-div
-{
-    border: thin black solid;
-    
-}
 
 .header
 {
@@ -30,16 +25,10 @@ div
 {
     display: flex;
     font-size: 1.5rem;
+    justify-content: space-evenly;
 }
 
-.container
-{
-    display: flex;
-    gap: 30px;
-    text-align: center;
-    flex-grow:1;
-    justify-content: center;
-}
+
 
 .choice-container
 {
@@ -48,7 +37,7 @@ div
     gap: 3rem;
 }
 
-.score-container
+.score-container, .versus-container
 {
     display: flex;
     justify-content: center;
@@ -59,7 +48,11 @@ div
 .choice
 {
     background-color: #393e46;
-    padding: 5rem;
+    height: 200px;
+    width: 200px;
+    padding: 2rem;
+    font-size: 5rem;
+    text-align: center;
 }
 
 .choice:hover

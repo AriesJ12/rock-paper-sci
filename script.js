@@ -3,7 +3,7 @@
 //declare max Score
 const MAX_SCORE = 5;
 
-const buttonsAnswer = document.querySelectorAll("button.choice");
+const buttonsAnswer = document.querySelectorAll("#player button.choice");
 
 
 //add event listener -> click -> play round

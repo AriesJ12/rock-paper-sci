@@ -12,30 +12,28 @@
     </div>
 
     <div class="section">
-      <div class="container">
-        <div class="choice-container">
-          <button data-answer="rock" type="button" class="choice">Rock</button>
-          <button data-answer="scissor" type="button" class="choice">
-            Scissors
-          </button>
-          <button data-answer="paper" type="button" class="choice">
-            Paper
-          </button>
-        </div>
-        <div class="score-container">
-          <div class="score" id="playerScore">0</div>
-        </div>
+      <div class="choice-container" id="player">
+        <button data-answer="rock" type="button" class="choice">✊</button>
+        <button data-answer="scissor" type="button" class="choice">✌️</button>
+        <button data-answer="paper" type="button" class="choice">✋</button>
+      </div>
+      <div class="score-container">
+        <div class="score" id="playerScore">0</div>
       </div>
 
-      <div class="container">
-        <div class="score-container">
-          <div class="score" id="computerScore">0</div>
+      <div class="versus-container">
+        <div>VS</div>
+      </div>
+
+      <div class="score-container">
+        <div class="score" id="computerScore">
+          0
         </div>
-        <div class="choice-container" >
-          <div class="choice selected">Rock</div>
-          <div class="choice">Scissors</div>
-          <div class="choice">Paper</div>
-        </div>
+      </div>
+      <div class="choice-container" id="computer">
+        <button data-answer="rock" type="button" class="choice">✊</button>
+        <button data-answer="scissor" type="button" class="choice">✌️</button>
+        <button data-answer="paper" type="button" class="choice">✋</button>
       </div>
     </div>
     <script src="script.js"></script>
